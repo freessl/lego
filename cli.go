@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"text/tabwriter"
 
+	"github.com/freessl/lego/acme"
 	"github.com/urfave/cli"
-	"github.com/xenolf/lego/acme"
 	"github.com/xenolf/lego/log"
 )
 

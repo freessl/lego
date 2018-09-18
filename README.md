@@ -17,7 +17,7 @@ and put the binary somewhere convenient. lego does not assume anything about the
 To install from source, just run:
 
 ```bash
-go get -u github.com/xenolf/lego
+go get -u github.com/freessl/lego
 ```
 
 To build lego inside a Docker container, just run

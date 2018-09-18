@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/freessl/lego/acme"
 	"github.com/urfave/cli"
-	"github.com/xenolf/lego/acme"
 )
 
 // Configuration type from CLI and config files.

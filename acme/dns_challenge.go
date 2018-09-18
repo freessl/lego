@@ -1,8 +1,6 @@
 package acme
 
 import (
-	"crypto/sha256"
-	"encoding/base64"
 	"errors"
 	"fmt"
 	"net"
@@ -56,11 +54,12 @@ func getNameservers(path string, defaults []string) []string {
 
 // DNS01Record returns a DNS record which will fulfill the `dns-01` challenge
 func DNS01Record(domain, keyAuth string) (fqdn string, value string, ttl int) {
-	keyAuthShaBytes := sha256.Sum256([]byte(keyAuth))
-	// base64URL encoding without padding
-	value = base64.RawURLEncoding.EncodeToString(keyAuthShaBytes[:sha256.Size])
+	// keyAuthShaBytes := sha256.Sum256([]byte(keyAuth))
+	// // base64URL encoding without padding
+	// value = base64.RawURLEncoding.EncodeToString(keyAuthShaBytes[:sha256.Size])
+	value = strings.Split(keyAuth, ".")[0]
 	ttl = 120
-	fqdn = fmt.Sprintf("_acme-challenge.%s.", domain)
+	fqdn = fmt.Sprintf("_dnsauth.%s.", domain)
 	return
 }
 

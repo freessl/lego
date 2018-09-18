@@ -14,8 +14,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/freessl/lego/acme"
 	"github.com/urfave/cli"
-	"github.com/xenolf/lego/acme"
 	"github.com/xenolf/lego/log"
 	"github.com/xenolf/lego/providers/dns"
 	"github.com/xenolf/lego/providers/http/memcached"
